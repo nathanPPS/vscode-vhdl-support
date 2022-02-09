@@ -2,7 +2,7 @@
 	"name": "vhdl",
 	"displayName": "VHDL",
 	"description": "VHDL support for VS Code",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "mshr-h",
 	"engines": {
 		"vscode": "^0.10.1"
@@ -12,7 +12,7 @@
 		"url": "https://github.com/mshr-h/vscode-vhdl-support.git"
 	},
 	"categories": [
-		"Languages"
+		"Programming Languages"
 	],
 	"contributes": {
 		"languages": [{
@@ -25,6 +25,12 @@
 			"language": "vhdl",
 			"scopeName": "source.vhdl",
 			"path": "./syntaxes/vhdl.tmLanguage"
-		}]
+		}],
+		"snippets": [
+			{
+				"language": "vhdl",
+				"path": "./snippets/vhdl.json"
+			}
+		]
 	}
 }

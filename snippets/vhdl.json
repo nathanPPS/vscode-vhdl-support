@@ -1,0 +1,112 @@
+{
+	"combinational process" : {
+		"prefix": "proc",
+		"body": [
+			"${1:label} : process(all)",
+			"\t$0",
+			"end process ${1:label};"
+		]
+	},
+	"sequential process w/ async reset" : {
+		"prefix": "proa",
+		"body": [
+			"${1:label} : process(${2:clock}, ${2:reset})",
+			"\tif (${2:reset} = '${3:1}') then",
+			"\t\t$0",
+			"\telsif rising_edge(${2:clock}) then",
+			"\t\t",
+			"\tend if;",
+			"end process ${1:label};"
+		]
+	},
+	"sequential process w/ sync reset" : {
+		"prefix": "pros",
+		"body": [
+			"${1:label} : process(${2:clock})",
+			"\tif rising_edge(${2:clock}) then",
+			"\t\tif (${2:reset} = '${3:1}') then",
+			"\t\t\t$0",
+			"\t\telse",
+			"\t\t\t",
+			"\t\tend if;",
+			"\tend if;",
+			"end process ${1:label};"
+		]
+	},
+	"if..then" : {
+		"prefix": "if",
+		"body": [
+			"if ($1) then",
+			"\t$0",
+			"end if;"
+		]
+	},
+	"elsif" : {
+		"prefix": "elsif",
+		"body": [
+			"elsif ($1) then",
+			"\t$0"
+		]
+	},
+	"else" : {
+		"prefix": "else",
+		"body": [
+			"else",
+			"\t$0"
+		]
+	},
+	"generic map": {
+		"prefix": "mapg",
+		"body": [
+			"${1:label} : entity work.${2:entity_name}",
+			"generic map(",
+			"\t$0",
+			")",
+			"port map(",
+			"\t",
+			");"
+		]
+	},
+	"port map": {
+		"prefix": "mapp",
+		"body": [
+			"${1:label} : entity work.${2:entity_name}",
+			"port map(",
+			"\t$0",
+			");"
+		]
+	},
+	"for..loop": {
+		"prefix": "forl",
+		"body": [
+			"for ${1:x} in (${2:bot} to ${3:top}) loop",
+			"\t$0",
+			"end loop;"
+		]
+	},
+	"for..generate": {
+		"prefix": "forg",
+		"body": [
+			"${1:label} : for ${2:x} in (${3:bot} to ${4:top}) generate",
+			"\t$0",
+			"end generate ${1:label};"
+		]
+	},
+	"if..generate": {
+		"prefix": "ifg",
+		"body": [
+			"${1:label} : if (${2:true}) generate",
+			"\t$0",
+			"end generate ${1:label};"
+		]
+	},
+	"function" : {
+		"prefix": "func",
+		"body": [
+			"function ${1:name} (${2:arguments}) return ${3:type} is",
+			"begin",
+			"\t$0",
+			"end function ${1:name};"
+		]
+	}
+}
