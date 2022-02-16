@@ -3,6 +3,7 @@
 		"prefix": "proc",
 		"body": [
 			"${1:label} : process(all)",
+			"begin",
 			"\t$0",
 			"end process ${1:label};"
 		]
@@ -11,6 +12,7 @@
 		"prefix": "proa",
 		"body": [
 			"${1:label} : process(${2:clock}, ${3:reset})",
+			"begin",
 			"\tif (${3:reset} = '${4:1}') then",
 			"\t\t$0",
 			"\telsif rising_edge(${2:clock}) then",
@@ -23,6 +25,7 @@
 		"prefix": "pros",
 		"body": [
 			"${1:label} : process(${2:clock})",
+			"begin",
 			"\tif rising_edge(${2:clock}) then",
 			"\t\tif (${2:reset} = '${3:1}') then",
 			"\t\t\t$0",
