@@ -1032,17 +1032,20 @@
 						# From the beginning of the line
 						^\s*
 
-						# The word function $1
+						# Optional word impure $1
+						(((?i:impure))\s+)?
+
+						# The word function $3
 						((?i:function))\s+
 
 						(
-							# A valid normal identifier $3
+							# A valid normal identifier $5
 							 ([a-zA-Z][a-zA-Z\d_]*)
-							# A valid string quoted identifier $4
+							# A valid string quoted identifier $6
 							|("\S+")
-							# A valid backslash escaped identifier $5
+							# A valid backslash escaped identifier $7
 							|(\\.+\\)
-							# An invalid identifier $5
+							# An invalid identifier $8
 							|(.+?)
 						)
 
@@ -1064,12 +1067,7 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.function.begin.vhdl</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.function.begin.vhdl</string>
+							<string>keyword.language.vhdl</string>
 						</dict>
 						<key>5</key>
 						<dict>
@@ -1077,6 +1075,16 @@
 							<string>entity.name.function.function.begin.vhdl</string>
 						</dict>
 						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.function.begin.vhdl</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.function.begin.vhdl</string>
+						</dict>
+						<key>8</key>
 						<dict>
 							<key>name</key>
 							<string>invalid.illegal.invalid.identifier.vhdl</string>
@@ -1160,18 +1168,21 @@
 						# From the beginning of the line
 						^\s*
 
-						# The word function $1
+						# Optional word impure $1
+						(((?i:impure))\s+)?
+
+						# The word function $3
 						((?i:function))\s+
 
 						
 						(
-							# A valid normal identifier $3
+							# A valid normal identifier $5
 							 ([a-zA-Z][a-zA-Z\d_]*)
-							# A valid quoted identifier $4
+							# A valid quoted identifier $6
 							|("\S+")
-							# A valid backslash escaped identifier $5
+							# A valid backslash escaped identifier $7
 							|(\\.+\\)
-							# An invalid identifier $6
+							# An invalid identifier $8
 							|(.+?)
 						)
 
@@ -1193,12 +1204,7 @@
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.function.function.prototype.vhdl</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.function.prototype.vhdl</string>
+							<string>keyword.language.vhdl</string>
 						</dict>
 						<key>5</key>
 						<dict>
@@ -1206,6 +1212,16 @@
 							<string>entity.name.function.function.prototype.vhdl</string>
 						</dict>
 						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.function.prototype.vhdl</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.function.prototype.vhdl</string>
+						</dict>
+						<key>8</key>
 						<dict>
 							<key>name</key>
 							<string>invalid.illegal.function.name.vhdl</string>
