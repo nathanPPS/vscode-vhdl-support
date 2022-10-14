@@ -1,4 +1,91 @@
 {
+	"std_context" : {
+		"prefix": "ieee",
+		"body": [
+			"ieee;",
+			"use ieee.std_logic_1164.all;",
+			"use ieee.numeric_std.all;",
+			"$0"
+		]
+	},
+	"entity" : {
+		"prefix": "entity",
+		"body": [
+			"entity ${1:label} is",
+			"\t$0",
+			"end entity ${1:label};"
+		]
+	},
+	"generic" : {
+		"prefix": "generic",
+		"body": [
+			"generic (",
+			"\t$0",
+			");"
+		]
+	},
+	"port" : {
+		"prefix": "port",
+		"body": [
+			"port (",
+			"\t$0",
+			");"
+		]
+	},
+	"architecture" : {
+		"prefix": "architecture",
+		"body": [
+			"architecture ${1:label} of ${2:entity} is",
+			"begin",
+			"\t$0",
+			"end architecture ${1:label};"
+		]
+	},
+	"package" : {
+		"prefix": "package",
+		"body": [
+			"package ${1:label} is",
+			"\t$0",
+			"end package ${1:label};"
+		]
+	},
+	"package body" : {
+		"prefix": "package body",
+		"body": [
+			"package body ${1:label} is",
+			"\t$0",
+			"end package body ${1:label};"
+		]
+	},
+	"type" : {
+		"prefix": "type",
+		"body": [
+			"type ${1:label} is $0"
+		]
+	},
+	"subtype" : {
+		"prefix": "subtype",
+		"body": [
+			"subtype ${1:label} is $0"
+		]
+	},
+	"record" : {
+		"prefix": "record",
+		"body": [
+			"record",
+			"\t$0",
+			"end record;"
+		]
+	},
+	"process" : {
+		"prefix": "process",
+		"body": [
+			"process ($1)",
+			"begin",
+			"\t$0",
+			"end process;"
+		]
+	},
 	"combinational process" : {
 		"prefix": "proc",
 		"body": [
